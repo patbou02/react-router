@@ -1,8 +1,8 @@
 import {Route} from 'react-router-dom';
-import AddQuote from './components/temp/AddQuote';
-import AllQuotes from './components/temp/AllQuotes';
-import DetailedQuote from './components/temp/DetailedQuote';
 import Header from './components/temp/Header';
+import AllQuotes from './components/pages/AllQuotes';
+import QuoteDetail from './components/pages/QuoteDetail';
+import NewQuote from './components/pages/NewQuote';
 
 function App() {
   return (
@@ -11,14 +11,14 @@ function App() {
       <section>
         Welcome to the quotes app.
       </section>
-      <Route path="/add-quote">
-        <AddQuote />
-      </Route>
-      <Route path="/detailed-quote">
-        <DetailedQuote />
-      </Route>
-      <Route path="/all-quotes">
+      <Route path="/quotes" exact>
         <AllQuotes />
+      </Route>
+      <Route path="/quotes/:quoteId">
+        <QuoteDetail />
+      </Route>
+      <Route path="/new-quote">
+        <NewQuote />
       </Route>
     </div>
   );
