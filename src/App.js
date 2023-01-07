@@ -1,16 +1,11 @@
-import {Route} from 'react-router-dom';
-import Header from './components/temp/Header';
+import {Route, Switch} from 'react-router-dom';
 import AllQuotes from './components/pages/AllQuotes';
 import QuoteDetail from './components/pages/QuoteDetail';
 import NewQuote from './components/pages/NewQuote';
 
 function App() {
   return (
-    <div>
-      <Header />
-      <section>
-        Welcome to the quotes app.
-      </section>
+    <Switch>
       <Route path="/quotes" exact>
         <AllQuotes />
       </Route>
@@ -20,7 +15,7 @@ function App() {
       <Route path="/new-quote">
         <NewQuote />
       </Route>
-    </div>
+    </Switch>
   );
 }
 
